@@ -6,8 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Welcome!"
-description              : "I am a second-year PhD student at Machine Learning and Optimization Lab, EPFL. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization and game theory. "
+title                    : "Dongyang Fan"
+description              : " "
 repository               : "fan1dy/fan1dy.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -28,7 +28,7 @@ author:
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en"
-  email            : "firstname.lastname@epfl.ch"
+  email            : "dongyang.fan@epfl.ch"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -64,9 +64,9 @@ include:
   - .htaccess
   - _pages
   - files
+  - google_scholar_crawler
 exclude:
   - docs
-  - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache
