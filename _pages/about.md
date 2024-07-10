@@ -29,18 +29,15 @@ I am a second-year PhD student at Machine Learning and Optimization Lab, EPFL. M
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753)
+[Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _COLM_
 
 Nicolas Wagner, **Dongyang Fan**, Martin Jaggi
 
-[Ghost Noise for Regularizing Deep Neural Networks](https://arxiv.org/abs/2305.17205)
+[Ghost Noise for Regularizing Deep Neural Networks](https://arxiv.org/abs/2305.17205) _AAAI '24_
 
 Atli Kosson, **Dongyang Fan**, Martin Jaggi
 
-[Collaborative Learning via Prediction Consensus](https://arxiv.org/abs/2305.18497)
+[Collaborative Learning via Prediction Consensus](https://arxiv.org/abs/2305.18497) _NeuRIPS '23_
 
 **Dongyang Fan**, Celestine Mendler-Dünner, Martin Jaggi
 
