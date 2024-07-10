@@ -19,17 +19,19 @@ redirect_from:
 
 **Welcome!**
 
-I am a second-year PhD student at Machine Learning and Optimization Lab, EPFL. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization and game theory.
+I am a second-year PhD student at Machine Learning and Optimization Lab, EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization and game theory. 
+
+If you want to reach out, do not hesitate to drop me an email! 
 
 
-# 🔥 News
+<!-- # 🔥 News
 - *2024.07*: &nbsp;🎉🎉 Our paper [Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) got accepted in the very first [Conference on Language Modeling](https://colmweb.org/)!
 - *2023.09*: &nbsp;🎉🎉 Our paper [Ghost Noise for Regularizing Deep Neural Networks](https://arxiv.org/abs/2305.17205) got accepted in AAAI 2024!
-- *2023.09*: &nbsp;🎉🎉 My very first paper [Collaborative Learning via Prediction Consensus](https://arxiv.org/abs/2305.18497) got accepted in NeuRIPS 2023! 
+- *2023.09*: &nbsp;🎉🎉 My very first paper [Collaborative Learning via Prediction Consensus](https://arxiv.org/abs/2305.18497) got accepted in NeuRIPS 2023!  -->
 
-# 📝 Publications 
+# 📝 Selected Publications 
 
-[Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _COLM_
+[Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _[First Conference on Language Modeling](https://colmweb.org/)_
 
 Nicolas Wagner, **Dongyang Fan**, Martin Jaggi
 
@@ -42,5 +44,5 @@ Atli Kosson, **Dongyang Fan**, Martin Jaggi
 **Dongyang Fan**, Celestine Mendler-Dünner, Martin Jaggi
 
 # 📖 Educations
-- *2022.09 - present *, PhD in Machine Learning, EPFL, Switzerland
+- *2022.09 - present*, PhD in Machine Learning, EPFL, Switzerland
 - *2019.09 - 2021.08*, M.Sc. in Statistics, ETH Zurich, Switzerland
