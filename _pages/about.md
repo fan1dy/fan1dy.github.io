@@ -31,6 +31,8 @@ If you want to reach out, do not hesitate to drop me an email!
 
 # 📝 Selected Publications 
 
+A full publication list can be found [here](https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en)
+
 [Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _to appear at [First Conference on Language Modeling](https://colmweb.org/)_
 
 Nicolas Wagner, **Dongyang Fan**, Martin Jaggi
