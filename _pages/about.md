@@ -19,7 +19,7 @@ redirect_from:
 
 **Welcome!**
 
-I am a second-year PhD student at Machine Learning and Optimization Lab, EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization and game theory. 
+I am a second-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization and game theory. 
 
 If you want to reach out, do not hesitate to drop me an email! 
 
@@ -46,5 +46,6 @@ Atli Kosson, **Dongyang Fan**, Martin Jaggi
 **Dongyang Fan**, Celestine Mendler-Dünner, Martin Jaggi
 
 # 📖 Educations
-- *2022.09 - present*, PhD in Machine Learning, EPFL, Switzerland
-- *2019.09 - 2021.08*, M.Sc. in Statistics, ETH Zurich, Switzerland
+- *2022.09 - present*, Ph.D. in Machine Learning, EPFL, Lausanne, Switzerland
+- *2019.09 - 2021.08*, M.Sc. in Statistics, ETH Zurich, Zurich, Switzerland
+- *2015.09 - 2019.07*, B.Sc. in Engineering, Tongji University, Shanghai, China
