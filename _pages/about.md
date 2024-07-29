@@ -19,7 +19,7 @@ redirect_from:
 
 **Welcome!**
 
-I am a second-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization and game theory. 
+I am a second-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization, social science and game theory. 
 
 If you want to reach out, do not hesitate to drop me an email! 
 
@@ -33,7 +33,7 @@ If you want to reach out, do not hesitate to drop me an email!
 
 A full publication list can be found [here](https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en)
 
-[Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _to appear at [First Conference on Language Modeling](https://colmweb.org/)_
+[Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _COLM '24_
 
 Nicolas Wagner, **Dongyang Fan**, Martin Jaggi
 
