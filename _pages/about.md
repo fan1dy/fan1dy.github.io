@@ -39,6 +39,7 @@ If you want to reach out, do not hesitate to drop me an email!
 A full publication list can be found [here](https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en)
 
 On-device Collaborative Language Modeling via a Mixture of Generalists and Specialists  _Preprint_
+
 **Dongyang Fan**, Bettina Messmer, Martin Jaggi
 
 [Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _COLM '24_
