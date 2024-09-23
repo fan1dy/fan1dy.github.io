@@ -19,7 +19,12 @@ redirect_from:
 
 **Welcome!**
 
-I am a second-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization, social science and game theory. 
+I am a third-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization, social science and game theory. 
+
+Currently, I am looking into the following topics:
+- Using algorithic insights to improve LLMs: privacy concerns, data selection, efficient training etc. 
+- Incentives of rational agents in a collaboration through mechanism design.
+
 
 If you want to reach out, do not hesitate to drop me an email! 
 
@@ -32,6 +37,9 @@ If you want to reach out, do not hesitate to drop me an email!
 # 📝 Selected Publications 
 
 A full publication list can be found [here](https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en)
+
+On-device Collaborative Language Modeling via a Mixture of Generalists and Specialists  _Preprint_
+**Dongyang Fan**, Bettina Messmer, Martin Jaggi
 
 [Personalized Collaborative Fine-Tuning for On-Device Large Language Models](https://arxiv.org/abs/2404.09753) _COLM '24_
 
