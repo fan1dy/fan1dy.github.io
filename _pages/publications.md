@@ -1,6 +1,7 @@
 ---
 permalink: /publications/
 title: "Publications"
+author_profile: false
 layout: default  # You can change this based on your site's layout structure
 excerpt: "A list of my publications."
 ---
