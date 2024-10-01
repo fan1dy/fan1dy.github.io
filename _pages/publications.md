@@ -1,13 +1,11 @@
-<!-- ---
-permalink: /
-title: ""
+---
+permalink: /publications/
+title: "Publications"
 excerpt: ""
-author_profile: false
 redirect_from: 
   - /publications/
   - /publications.html
---- -->
-
+---
 
 # Publications 
 
