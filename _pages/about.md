@@ -19,7 +19,7 @@ redirect_from:
 
 **Welcome!**
 
-I am a third-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization, social science and game theory. 
+I am a third-year PhD student at [Machine Learning and Optimization Lab](https://www.epfl.ch/labs/mlo/), EPFL, supervised by Prof. Martin Jaggi. Prior to my PhD, I worked briefly as a Machine Learning Engineer in a start-up. My research interests are to develop algorithms for effecient and collaborative machine learning, through the lens of optimization, social science and game theory. 
 
 Currently, I am looking into the following topics:
 - Using algorithmic insights to improve LLMs: privacy concerns, data selection, efficient training etc. 
