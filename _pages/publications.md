@@ -1,10 +1,8 @@
 ---
 permalink: /publications/
 title: "Publications"
-excerpt: ""
-redirect_from: 
-  - /publications/
-  - /publications.html
+layout: default  # You can change this based on your site's layout structure
+excerpt: "A list of my publications."
 ---
 
 # Publications 
