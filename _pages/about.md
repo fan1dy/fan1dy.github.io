@@ -23,10 +23,11 @@ I am a third-year PhD student at [Machine Learning and Optimization Lab](https:/
 
 Currently, I am looking into the following topics:
 - Using algorithmic insights to improve LLMs: privacy concerns, data selection, efficient training etc. 
+- On-device and personalized LLMs to adapt to users' needs.
 - Incentives of rational agents in a collaboration through mechanism design.
 
 
-If you want to reach out, do not hesitate to drop me an email! 
+I am also happy to branch out my research. If you want to reach out, do not hesitate to drop me an email! 
 
 
 <!-- # 🔥 News
