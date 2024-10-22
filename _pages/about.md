@@ -39,21 +39,15 @@ I am also happy to branch out my research. If you want to reach out, do not hesi
 
 A full publication list can be found [here](https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en)
 
-* On-Device Collaborative Language Modeling via a Mixture of Generalists and Specialists  [_Preprint_](https://arxiv.org/abs/2409.13931)
+* On-Device Collaborative Language Modeling via a Mixture of Generalists and Specialists  [_Preprint_](https://arxiv.org/abs/2409.13931)<br />
+_**Dongyang Fan**, Bettina Messmer, Martin Jaggi_
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _**Dongyang Fan**, Bettina Messmer, Martin Jaggi_
+* Personalized Collaborative Fine-Tuning for On-Device Large Language Models [_COLM '24_](https://arxiv.org/abs/2404.09753)<br /> _Nicolas Wagner, **Dongyang Fan**, Martin Jaggi_
 
-* Personalized Collaborative Fine-Tuning for On-Device Large Language Models [_COLM '24_](https://arxiv.org/abs/2404.09753)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Nicolas Wagner, **Dongyang Fan**, Martin Jaggi_
-
-* Ghost Noise for Regularizing Deep Neural Networks [_AAAI '24_](https://arxiv.org/abs/2305.17205)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _Atli Kosson, **Dongyang Fan**, Martin Jaggi_
+* Ghost Noise for Regularizing Deep Neural Networks [_AAAI '24_](https://arxiv.org/abs/2305.17205) <br />_Atli Kosson, **Dongyang Fan**, Martin Jaggi_
 
 * Collaborative Learning via Prediction Consensus [_NeuRIPS '23_](https://arxiv.org/abs/2305.18497)
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _**Dongyang Fan**, Celestine Mendler-Dünner, Martin Jaggi_
+<br /> _**Dongyang Fan**, Celestine Mendler-Dünner, Martin Jaggi_
 
 # 📖 Educations
 - *2022.09 - present*, Ph.D. in Machine Learning, EPFL, Lausanne, Switzerland
