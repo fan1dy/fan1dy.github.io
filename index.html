@@ -553,23 +553,42 @@
       </tr>
     </table>
   <script>
-    // Theme management
+    // Theme management with time-based automatic switching
     (function() {
       const themeToggle = document.getElementById('themeToggle');
       const themeIcon = document.getElementById('themeIcon');
       const html = document.documentElement;
       
-      // Get saved theme or default to system preference
+      // Determine if it's day or night based on local time
+      // Day: 6 AM - 8 PM (6:00 - 20:00)
+      // Night: 8 PM - 6 AM (20:00 - 6:00)
+      function isDayTime() {
+        const now = new Date();
+        const hour = now.getHours();
+        return hour >= 6 && hour < 20;
+      }
+      
+      // Get theme based on time of day
+      function getTimeBasedTheme() {
+        return isDayTime() ? 'light' : 'dark';
+      }
+      
+      // Check if user has manually set a preference
+      function hasManualOverride() {
+        return localStorage.getItem('theme') !== null;
+      }
+      
+      // Get saved theme preference
       const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       
       // Set initial theme
       if (savedTheme) {
+        // User has manually set a preference, use it
         html.setAttribute('data-theme', savedTheme);
-      } else if (prefersDark) {
-        html.setAttribute('data-theme', 'dark');
       } else {
-        html.setAttribute('data-theme', 'light');
+        // No manual preference, use time-based theme
+        const timeBasedTheme = getTimeBasedTheme();
+        html.setAttribute('data-theme', timeBasedTheme);
       }
       
       // Update icon
@@ -579,19 +598,33 @@
       }
       updateIcon();
       
-      // Toggle theme
+      // Toggle theme (manual override)
       themeToggle.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+        localStorage.setItem('theme', newTheme); // Save manual preference
         updateIcon();
       });
       
-      // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      // Check time periodically and update theme if no manual override
+      // Check every minute to catch day/night transitions
+      setInterval(() => {
+        if (!hasManualOverride()) {
+          const timeBasedTheme = getTimeBasedTheme();
+          const currentTheme = html.getAttribute('data-theme');
+          if (currentTheme !== timeBasedTheme) {
+            html.setAttribute('data-theme', timeBasedTheme);
+            updateIcon();
+          }
+        }
+      }, 60000); // Check every minute
+      
+      // Also check when page becomes visible again (user returns to tab)
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && !hasManualOverride()) {
+          const timeBasedTheme = getTimeBasedTheme();
+          html.setAttribute('data-theme', timeBasedTheme);
           updateIcon();
         }
       });
