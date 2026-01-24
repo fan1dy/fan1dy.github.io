@@ -274,3 +274,51 @@ tr[bgcolor="#ffffd0"] td {
   background-color: var(--link-color);
   opacity: 0.9;
 }
+
+/* Conference tag styling */
+.conference-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .conference-tag {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.conference-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="dark"] .conference-tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.conference-container {
+  position: absolute;
+  top: -8px;
+  left: 6px;
+  z-index: 10;
+}
+
+/* Make image cells position relative for absolute positioning of tags */
+td[style*="padding:16px"] {
+  position: relative;
+}
