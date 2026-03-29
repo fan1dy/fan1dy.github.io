@@ -322,3 +322,206 @@ tr[bgcolor="#ffffd0"] td {
 td[style*="padding:16px"] {
   position: relative;
 }
+
+/* News section (before Research) */
+.news-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8px 2.5% 4px;
+  box-sizing: border-box;
+}
+
+.news-section-title {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  font-weight: normal;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  color: var(--text-color);
+}
+
+.news-slider {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .news-slider {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* News: row = scrollable text + custom flower thumb (native ::-webkit-scrollbar is hidden) */
+.news-scroll-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.news-slider--inline .news-scroll-row {
+  max-height: min(14rem, 34vh);
+  min-height: 5rem;
+}
+
+.news-slides-viewport {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.news-slides-viewport::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.news-slides-viewport:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.news-scrollbar {
+  flex: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 6px 10px 4px;
+  border-left: 1px solid var(--border-color);
+  background: color-mix(in srgb, var(--border-color) 10%, var(--bg-color));
+  transition: flex-basis 0.15s ease, padding 0.15s ease, border-color 0.15s ease;
+}
+
+.news-scrollbar.news-scrollbar--hidden {
+  flex: 0 0 0;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border-left: none;
+  overflow: hidden;
+}
+
+.news-scrollbar-track {
+  flex: 1 1 auto;
+  width: 20px;
+  min-height: 48px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--border-color) 28%, var(--bg-color));
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .news-scrollbar-track {
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Fixed thumb: blossom emoji 🌼 (not a proportional bar) */
+.news-scrollbar-thumb {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  background: color-mix(in srgb, #fce8f0 55%, var(--bg-color));
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.news-scrollbar-thumb:hover {
+  background: color-mix(in srgb, #ffd6e8 65%, var(--bg-color));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.news-scrollbar-thumb--dragging {
+  cursor: grabbing;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16);
+}
+
+[data-theme="dark"] .news-scrollbar-thumb {
+  background: color-mix(in srgb, #4a3540 45%, var(--bg-color));
+}
+
+.news-scrollbar-thumb-emoji {
+  font-size: 22px;
+  line-height: 1;
+  pointer-events: none;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "EmojiOne Mozilla", sans-serif;
+}
+
+.news-slides-track {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.news-slide {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.news-slide:last-child {
+  border-bottom: none;
+}
+
+/* One line: [date] body (wraps on narrow widths) */
+.news-slide-line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.45em;
+  row-gap: 0.2em;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.news-slide-date {
+  margin: 0;
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--link-color);
+  opacity: 0.95;
+}
+
+.news-slide-date::before {
+  content: '[';
+}
+
+.news-slide-date::after {
+  content: ']';
+}
+
+.news-slide-text {
+  margin: 0;
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-size: inherit;
+  line-height: inherit;
+}

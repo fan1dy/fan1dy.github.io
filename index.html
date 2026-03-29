@@ -61,12 +61,60 @@
               </td>
             </tr>
           </tbody></table>
-         
+
+          <div class="news-section" aria-labelledby="news-heading">
+            <h2 id="news-heading" class="news-section-title">News</h2>
+            <div class="news-slider news-slider--inline" id="newsSlider">
+              <div class="news-scroll-row">
+              <div class="news-slides-viewport" id="newsSlidesViewport" tabindex="0" role="region" aria-label="News items — scroll vertically">
+                <div class="news-slides-track" id="newsSlidesTrack">
+                  <article class="news-slide">
+                    <p class="news-slide-line">
+                      <span class="news-slide-date">03/2026</span>
+                      <span class="news-slide-text">Our benchmark <a href="https://arxiv.org/abs/2602.01031">HalluHard</a> is discussed in <a href="https://www.radiofrance.fr/franceinfo/podcasts/le-billet-sciences/ia-hallucinations-40-2722391">Radio France</a>!</span>
+                    </p>
+                  </article>
+                  <article class="news-slide">
+                    <p class="news-slide-line">
+                      <span class="news-slide-date">02/2026</span>
+                      <span class="news-slide-text">Our benchmark <a href="https://arxiv.org/abs/2602.01031">HalluHard</a> is on arXiv! See <a href="https://halluhard.com/"> our website</a> for updates on newly released results!</span>
+                    </p>
+                  </article>
+                  <article class="news-slide">
+                    <p class="news-slide-line">
+                      <span class="news-slide-date">01/2026</span>
+                      <span class="news-slide-text"><a href="https://arxiv.org/abs/2511.21613">Our paper</a> on Data-Efficient LLM Pretraining is accepted at ICLR 2026 🇧🇷🎉</span>
+                    </p>
+                  </article>
+                  <article class="news-slide">
+                    <p class="news-slide-line">
+                      <span class="news-slide-date">01/2026</span>
+                      <span class="news-slide-text">I started my internship at <a href="https://www.datologyai.com/">DatologyAI</a>, working on math synthetic data generation 🌴.</span>
+                    </p>
+                  </article>
+                  <article class="news-slide">
+                    <p class="news-slide-line">
+                      <span class="news-slide-date">12/2025</span>
+                      <span class="news-slide-text">Attending NeurIPS 2025 in San Diego, California 🇺🇸, presenting our work on <a href="https://arxiv.org/abs/2505.16570">metadata conditioned pretraining</a>!</span>
+                    </p>
+                  </article>
+                </div>
+              </div>
+              <div class="news-scrollbar" id="newsScrollbar" aria-hidden="true">
+                <div class="news-scrollbar-track" id="newsScrollbarTrack">
+                  <div class="news-scrollbar-thumb" id="newsScrollbarThumb">
+                    <span class="news-scrollbar-thumb-emoji" aria-hidden="true">🌼</span>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
+                <h2 id="research-heading">Research</h2>
                 <p style="font-size: 11px; color: var(--text-color); opacity: 0.7; margin-top: 4px;">
                   <em>Note: WS denotes Workshop</em>
                 </p>
@@ -596,6 +644,7 @@
         </td>
       </tr>
     </table>
+
   <script>
     // Theme management with time-based automatic switching
     (function() {
@@ -673,6 +722,88 @@
         }
       });
     })();
+
+    // News: custom scrollbar with emoji thumb (native ::-webkit-scrollbar styling is unreliable)
+    (function() {
+      const viewport = document.getElementById('newsSlidesViewport');
+      const thumb = document.getElementById('newsScrollbarThumb');
+      const track = document.getElementById('newsScrollbarTrack');
+      const bar = document.getElementById('newsScrollbar');
+      if (!viewport || !thumb || !track || !bar) return;
+
+      function maxScroll() {
+        return Math.max(0, viewport.scrollHeight - viewport.clientHeight);
+      }
+
+      function updateThumb() {
+        const ms = maxScroll();
+        const trackH = track.clientHeight;
+        if (ms <= 0 || trackH <= 0) {
+          bar.classList.add('news-scrollbar--hidden');
+          thumb.style.transform = 'translateX(-50%)';
+          return;
+        }
+        bar.classList.remove('news-scrollbar--hidden');
+        const thumbH = thumb.offsetHeight;
+        const travel = Math.max(0, trackH - thumbH);
+        const top = travel > 0 ? (viewport.scrollTop / ms) * travel : 0;
+        thumb.style.transform = 'translateX(-50%) translateY(' + top + 'px)';
+      }
+
+      let dragStartY = 0;
+      let dragStartScroll = 0;
+
+      thumb.addEventListener('pointerdown', function(e) {
+        if (maxScroll() <= 0) return;
+        e.preventDefault();
+        thumb.setPointerCapture(e.pointerId);
+        dragStartY = e.clientY;
+        dragStartScroll = viewport.scrollTop;
+        thumb.classList.add('news-scrollbar-thumb--dragging');
+
+        function onMove(ev) {
+          const ms = maxScroll();
+          const trackH = track.clientHeight;
+          const thumbH = thumb.offsetHeight;
+          const travel = Math.max(1, trackH - thumbH);
+          const dy = ev.clientY - dragStartY;
+          const next = dragStartScroll + (dy / travel) * ms;
+          viewport.scrollTop = Math.max(0, Math.min(ms, next));
+        }
+
+        function onUp(ev) {
+          thumb.releasePointerCapture(ev.pointerId);
+          thumb.classList.remove('news-scrollbar-thumb--dragging');
+          document.removeEventListener('pointermove', onMove);
+          document.removeEventListener('pointerup', onUp);
+        }
+
+        document.addEventListener('pointermove', onMove);
+        document.addEventListener('pointerup', onUp);
+      });
+
+      track.addEventListener('pointerdown', function(e) {
+        if (e.target === thumb || thumb.contains(e.target)) return;
+        const ms = maxScroll();
+        if (ms <= 0) return;
+        const rect = track.getBoundingClientRect();
+        const thumbH = thumb.offsetHeight;
+        const trackH = track.clientHeight;
+        const travel = Math.max(1, trackH - thumbH);
+        const y = e.clientY - rect.top - thumbH / 2;
+        const clamped = Math.max(0, Math.min(travel, y));
+        viewport.scrollTop = (clamped / travel) * ms;
+      });
+
+      viewport.addEventListener('scroll', updateThumb, { passive: true });
+      window.addEventListener('resize', updateThumb);
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(updateThumb).observe(viewport);
+        new ResizeObserver(updateThumb).observe(track);
+      }
+      updateThumb();
+    })();
+
   </script>
   </body>
 </html>
