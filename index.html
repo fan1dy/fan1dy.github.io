@@ -1,816 +1,500 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <meta charset="UTF-8">
     <title>Dongyang Fan</title>
-
     <meta name="author" content="Dongyang Fan">
+    <meta name="description" content="Dongyang Fan (范冬阳) — PhD student at EPFL working on data, evaluation, and modular & collaborative learning for LLMs.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+    <script>
+      // Set theme before first paint to avoid a flash. Manual choice wins; otherwise day (6–20h) = light.
+      (function() {
+        var saved = localStorage.getItem('theme');
+        var h = new Date().getHours();
+        document.documentElement.setAttribute('data-theme', saved || (h >= 6 && h < 20 ? 'light' : 'dark'));
+      })();
+    </script>
   </head>
 
   <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <span id="themeIcon">🌙</span>
-    </button>
-    
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Dongyang Fan
-                </p>
-                <p>Hi! Thanks for stopping by :) I'm a passionate 4th-year PhD student at <a href="https://www.epfl.ch/labs/mlo/">Machine Learning and Optimization Lab</a> at EPFL, supervised by <a href="https://scholar.google.com/citations?user=r1TJBr8AAAAJ&hl=en">Prof. Martin Jaggi</a>. My name is pronounced as Don-Young (范冬阳).
-                </p>
-                <p>
-                My research interests include:
+    <!-- ============ Navigation ============ -->
+    <header class="site-nav">
+      <div class="nav-inner">
+        <a class="nav-brand" href="#top">Dongyang Fan</a>
+        <nav class="nav-links" aria-label="Sections">
+          <a href="#research">Research</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#service">Service</a>
+          <a href="#misc">Misc</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </header>
 
-                <ul> <li> <strong>Data-Efficient Language Modeling</strong> <ul> 
-                  <li>Mixture-of-Experts architectures</li>
-                   <li>Better synthetic data generation</li> 
-                   <li>Accelerating LLM pretraining through metadata conditioning</li> 
-                  
-                  </ul> </li> <li> <strong>Responsible Language Modeling</strong> <ul> 
-                    <li>Data-compliant pretraining by respecting owners’ opt-out choices.</li> 
-                    <li>Designing compensation frameworks for data contributors</li> 
-                    <li>Understanding and mitigating model hallucinations</li> </ul> </li> </ul>
+    <main class="container" id="top">
 
-                  </ul>
-
-                  I am also happy to branch out my research. If you want to reach out, do not hesitate to drop me an email!
-                  
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:dongyang.fan@epfl.ch">Email</a> &nbsp;/&nbsp;
-                  <!-- <a href="https://drive.google.com/file/d/1J-jg1cLd7D1rCXRqkbjhes2PBSlX4Ofy/view?usp=sharing">CV</a> &nbsp;/&nbsp; -->
-                  <a href="https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-                   <a href="https://www.semanticscholar.org/author/Dongyang-Fan/2284762232"> Semantic Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://x.com/dyfan22">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/fan1dy/">Github</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/fannnndy/">LinkedIn</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/IMG_2469.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/IMG_2469.png" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-
-          <div class="news-section" aria-labelledby="news-heading">
-            <h2 id="news-heading" class="news-section-title">News</h2>
-            <div class="news-slider news-slider--inline" id="newsSlider">
-              <div class="news-scroll-row">
-              <div class="news-slides-viewport" id="newsSlidesViewport" tabindex="0" role="region" aria-label="News items — scroll vertically">
-                <div class="news-slides-track" id="newsSlidesTrack">
-                  <article class="news-slide">
-                    <p class="news-slide-line">
-                      <span class="news-slide-date">05/2026</span>
-                      <span class="news-slide-text">I started my internship at NVIDIA 🇨🇭, working on LLM evaluation and analysis!</span>
-                    </p>
-                  </article>
-                  <article class="news-slide">
-                    <p class="news-slide-line">
-                      <span class="news-slide-date">03/2026</span>
-                      <span class="news-slide-text">Our benchmark <a href="https://arxiv.org/abs/2602.01031">HalluHard</a> is discussed in <a href="https://www.radiofrance.fr/franceinfo/podcasts/le-billet-sciences/ia-hallucinations-40-2722391">Radio France</a>!</span>
-                    </p>
-                  </article>
-                  <article class="news-slide">
-                    <p class="news-slide-line">
-                      <span class="news-slide-date">02/2026</span>
-                      <span class="news-slide-text">Our benchmark <a href="https://arxiv.org/abs/2602.01031">HalluHard</a> is on arXiv! See <a href="https://halluhard.com/"> our website</a> for updates on newly released results!</span>
-                    </p>
-                  </article>
-                  <article class="news-slide">
-                    <p class="news-slide-line">
-                      <span class="news-slide-date">01/2026</span>
-                      <span class="news-slide-text"><a href="https://arxiv.org/abs/2511.21613">Our paper</a> on Data-Efficient LLM Pretraining is accepted at ICLR 2026 🇧🇷🎉</span>
-                    </p>
-                  </article>
-                  <article class="news-slide">
-                    <p class="news-slide-line">
-                      <span class="news-slide-date">01/2026</span>
-                      <span class="news-slide-text">I started my internship at <a href="https://www.datologyai.com/">DatologyAI</a> 🇺🇸, working on math synthetic data generation .</span>
-                    </p>
-                  </article>
-                  <article class="news-slide">
-                    <p class="news-slide-line">
-                      <span class="news-slide-date">12/2025</span>
-                      <span class="news-slide-text">Attending NeurIPS 2025 in San Diego, California 🇺🇸, presenting our work on <a href="https://arxiv.org/abs/2505.16570">metadata conditioned pretraining</a>!</span>
-                    </p>
-                  </article>
-                </div>
-              </div>
-              <div class="news-scrollbar" id="newsScrollbar" aria-hidden="true">
-                <div class="news-scrollbar-track" id="newsScrollbarTrack">
-                  <div class="news-scrollbar-thumb" id="newsScrollbarThumb">
-                    <span class="news-scrollbar-thumb-emoji" aria-hidden="true">🌼</span>
-                  </div>
-                </div>
-              </div>
-              </div>
-            </div>
+      <!-- ============ Hero / About ============ -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1 class="name">Dongyang Fan <span class="name-cn">范冬阳</span></h1>
+          <p class="affiliation">
+            PhD student · <a href="https://www.epfl.ch/labs/mlo/">Machine Learning and Optimization Lab</a>, EPFL
+          </p>
+          <p>
+            Hi, thanks for stopping by :) I'm Dongyang (pronounced <em>Don-Young</em>), a 4th-year PhD student
+            at EPFL advised by <a href="https://scholar.google.com/citations?user=r1TJBr8AAAAJ&hl=en">Prof. Martin Jaggi</a>.
+          </p>
+          <p>
+            I study LLMs from two angles: <strong>building</strong> them, so that they learn efficiently from data
+            and can be developed and trained collaboratively across many parties; and <strong>measuring</strong> them,
+            tracking frontier capabilities through evaluation and benchmarking.
+          </p>
+          <p>
+            I'm always open to new directions. If you'd like to chat or collaborate, feel free to email me!
+          </p>
+          <div class="social-links">
+            <a class="pill" href="mailto:dongyang.fan@epfl.ch">Email</a>
+            <a class="pill" href="https://scholar.google.com/citations?user=U7yzfCkAAAAJ&hl=en">Google Scholar</a>
+            <a class="pill" href="https://www.semanticscholar.org/author/Dongyang-Fan/2284762232">Semantic Scholar</a>
+            <a class="pill" href="https://x.com/dyfan22">Twitter</a>
+            <a class="pill" href="https://github.com/fan1dy/">GitHub</a>
+            <a class="pill" href="https://www.linkedin.com/in/fannnndy/">LinkedIn</a>
           </div>
+        </div>
+        <div class="hero-photo">
+          <a href="images/IMG_2469.png"><img class="profile" alt="Photo of Dongyang Fan" src="images/IMG_2469.png"></a>
+        </div>
+      </section>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2 id="research-heading">Research</h2>
-                <p style="font-size: 11px; color: var(--text-color); opacity: 0.7; margin-top: 4px;">
-                  <em>Note: WS denotes Workshop</em>
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <!-- ============ Research Interests ============ -->
+      <section id="research" class="section">
+        <h2>Research Interests</h2>
+        <div class="interest-grid">
 
-           <!-- New paper entry (fill in details below) -->
-           <tr bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="conference-container">
-                  <span class="conference-tag">preprint 2026</span>
-                </div>
-                <!-- <div class="one"> -->
-                  <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/halluhard.png' width="160" alt="Paper thumbnail">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">HalluHard: A Hard Multi-Turn Hallucination Benchmark</span>
-                <br>
-                <strong>Dongyang Fan*</strong>,
-                Sebastien Delsad*,
+          <article class="interest-card" data-topic="data">
+            <div class="interest-head">
+              <span class="interest-icon" aria-hidden="true">🗂️</span>
+              <h3>Data</h3>
+            </div>
+            <p class="interest-lead">What makes training data valuable, and how do we use it well and responsibly?</p>
+            <ul>
+              <li>Data-efficient pretraining through metadata conditioning</li>
+              <li>Synthetic data generation, e.g., for math reasoning</li>
+              <li>Compliant data use: respecting web-crawling opt-outs and pricing data contributions fairly</li>
+            </ul>
+            <button class="interest-link" data-filter="data">See papers →</button>
+          </article>
+
+          <article class="interest-card" data-topic="eval">
+            <div class="interest-head">
+              <span class="interest-icon" aria-hidden="true">🔍</span>
+              <h3>Evaluation</h3>
+            </div>
+            <p class="interest-lead">How do we track model capabilities and performance over time?</p>
+            <ul>
+              <li>Hard, realistic benchmarks that stay informative as models improve</li>
+              <li>Real-life focus: multi-turn interactions and agentic behaviors</li>
+              <li>Analyzing model behavior beyond single leaderboard numbers</li>
+            </ul>
+            <button class="interest-link" data-filter="eval">See papers →</button>
+          </article>
+
+          <article class="interest-card" data-topic="modular">
+            <div class="interest-head">
+              <span class="interest-icon" aria-hidden="true">🧩</span>
+              <h3>Modular &amp; Collaborative Learning</h3>
+            </div>
+            <p class="interest-lead">How can models be built from specialized parts, and trained by many parties together?</p>
+            <ul>
+              <li>Mixture-of-Experts: design choices, specialization, and routing</li>
+              <li>Decentralized and collaborative training across devices and data owners</li>
+              <li>Personalization without sharing raw data</li>
+            </ul>
+            <button class="interest-link" data-filter="modular">See papers →</button>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ News ============ -->
+      <section id="news" class="section">
+        <h2>News</h2>
+        <ul class="news-list" id="newsList">
+          <li><span class="news-date">05/2026</span><span>I started my internship at NVIDIA 🇨🇭, working on LLM evaluation and analysis!</span></li>
+          <li><span class="news-date">03/2026</span><span>Our benchmark <a href="https://arxiv.org/abs/2602.01031">HalluHard</a> is discussed on <a href="https://www.radiofrance.fr/franceinfo/podcasts/le-billet-sciences/ia-hallucinations-40-2722391">Radio France</a>!</span></li>
+          <li><span class="news-date">02/2026</span><span>Our benchmark <a href="https://arxiv.org/abs/2602.01031">HalluHard</a> is on arXiv! See <a href="https://halluhard.com/">our website</a> for newly released results.</span></li>
+          <li><span class="news-date">01/2026</span><span><a href="https://arxiv.org/abs/2511.21613">Our paper</a> on data-efficient LLM pretraining is accepted at ICLR 2026 🇧🇷🎉</span></li>
+          <li><span class="news-date">01/2026</span><span>I started my internship at <a href="https://www.datologyai.com/">DatologyAI</a> 🇺🇸, working on math synthetic data generation.</span></li>
+          <li><span class="news-date">12/2025</span><span>Attending NeurIPS 2025 in San Diego 🇺🇸, presenting our work on <a href="https://arxiv.org/abs/2505.16570">metadata-conditioned pretraining</a>!</span></li>
+        </ul>
+        <button class="text-button" id="newsToggle" hidden>Show older news ↓</button>
+      </section>
+
+      <!-- ============ Publications ============ -->
+      <section id="publications" class="section">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <div class="filters" role="group" aria-label="Filter publications by topic">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="data" data-topic="data">Data</button>
+            <button class="filter" data-filter="eval" data-topic="eval">Evaluation</button>
+            <button class="filter" data-filter="modular" data-topic="modular">Modular &amp; Collaborative</button>
+          </div>
+        </div>
+        <p class="note">* equal contribution &nbsp;·&nbsp; WS = Workshop</p>
+
+        <div class="pub-list" id="pubList">
+
+          <article class="pub" data-topics="eval">
+            <div class="pub-thumb"><img src="images/halluhard.png" alt="HalluHard thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">Preprint 2026</span>
+              <h3 class="pub-title">HalluHard: A Hard Multi-Turn Hallucination Benchmark</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan*</strong>, Sebastien Delsad*,
                 <a href="https://scholar.google.com/citations?user=7nVGYfgAAAAJ&hl=fr">Nicolas Flammarion</a>,
                 <a href="https://www.andriushchenko.me/">Maksym Andriushchenko</a>
-                <br>
+              </p>
+              <div class="pub-links">
                 <a href="https://arxiv.org/abs/2602.01031">arXiv</a>
-                /
                 <a href="https://github.com/epfml/halluhard">code</a>
-                /
                 <a href="https://halluhard.com/">website</a>
-                <div class="keywords">
-                  <span class="keyword-tag">Hallucination</span>
-                  <span class="keyword-tag">Benchmark</span>
-                  <span class="keyword-tag">LLM Evaluation</span>
-                </div>
-                <p></p>
-              </td>
-            </tr>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Hallucination</span>
+                <span class="keyword-tag">Benchmark</span>
+                <span class="keyword-tag">LLM Evaluation</span>
+              </div>
+            </div>
+          </article>
 
-           <tr >
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="conference-container">
-                  <span class="conference-tag">ICLR 2026</span>
-                </div>
-                <!-- <div class="one"> -->
-                  <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/beyond_urls.png' width="160">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining
-        </span>
-                </a>
-                <br>
-                <strong>Dongyang Fan*</strong>,
-                Diba Hashemi*,
-                <a href="https://spkreddy.org/">Sai Praneeth Karimireddy</a>,
-                Martin Jaggi
-                <br>
+          <article class="pub" data-topics="data">
+            <div class="pub-thumb"><img src="images/beyond_urls.png" alt="Beyond URLs thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">ICLR 2026</span>
+              <h3 class="pub-title">Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan*</strong>, Diba Hashemi*,
+                <a href="https://spkreddy.org/">Sai Praneeth Karimireddy</a>, Martin Jaggi
+              </p>
+              <div class="pub-links">
                 <a href="https://arxiv.org/abs/2511.21613">arXiv</a>
-                <div class="keywords">
-                  <span class="keyword-tag">LLM Pretraining</span>
-                  <span class="keyword-tag">Metadata</span>
-                  <span class="keyword-tag">Data Efficiency</span>
-                </div>
-                <p></p>
-                <!-- <p>
-                  <li>We introduce the concept of Data Compliance Gap (DCG), to quantify the performance difference due to ethical compliance  </li>
-                  <li>We demonstrate that DCG is close to 0% for general knowledge acquisition, however, compliance gap exists in knowledge of veracity and in structural formats. 
-                    </li>
-                  <li>A noticeable DCG also exists for non-compliant medical domain data.</li>
-                </p> -->
-              </td>
-            </tr>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">LLM Pretraining</span>
+                <span class="keyword-tag">Metadata</span>
+                <span class="keyword-tag">Data Efficiency</span>
+              </div>
+            </div>
+          </article>
 
-
-
-            <tr bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle;">
-                <div class="conference-container">
-                  <span class="conference-tag">ACL Main 2026</span>
-                </div>
-                <!-- <div class="one"> -->
-                <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/apertus.jpg' width="160">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">Apertus: Democratizing Open and Compliant LLMs for Global Language Environments
-        </span>
-                </a>
-                <br>
-                Apertus team (as a member of the pretraining team)
-                <br>
+          <article class="pub" data-topics="data">
+            <div class="pub-thumb"><img src="images/apertus.jpg" alt="Apertus thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">ACL Main 2026</span>
+              <h3 class="pub-title">Apertus: Democratizing Open and Compliant LLMs for Global Language Environments</h3>
+              <p class="pub-authors">Apertus team (member of the pretraining team)</p>
+              <div class="pub-links">
                 <a href="https://arxiv.org/abs/2509.14233">arXiv</a>
-                <div class="keywords">
-                  <span class="keyword-tag">Open LLMs</span>
-                  <span class="keyword-tag">Data Compliance</span>
-                  <span class="keyword-tag">Multilingual</span>
-                </div>
-                <p></p>
-                <!-- <p>
-                  <li>Data are important for LLMs and they are of different intrinsic costs</li>
-                  <li>Applying popular data valuation methods as pricing rules may encourage data sellers to misreport their true costs </li>
-                  <li>We revisit classical truthful methods from the game theory literature</li>
-                </p> -->
-              </td>
-            </tr>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Open LLMs</span>
+                <span class="keyword-tag">Data Compliance</span>
+                <span class="keyword-tag">Multilingual</span>
+              </div>
+            </div>
+          </article>
 
-          <tr >
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="conference-container">
-                  <span class="conference-tag">COLM 2025 WS (oral 🏆)</span>
-                </div>
-                <!-- <div class="one"> -->
-                  <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/timoe.jpg' width="160">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">TiMoE: Time-Aware Mixture of Language Experts
-        </span>
-                </a>
-                <br>
-                Robin Faro*,
-                <strong>Dongyang Fan*</strong>,
-                Tamar Alphaidze, 
-                Martin Jaggi
-                <br>
+          <article class="pub" data-topics="modular">
+            <div class="pub-thumb"><img src="images/timoe.jpg" alt="TiMoE thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">COLM 2025 WS · Oral 🏆</span>
+              <h3 class="pub-title">TiMoE: Time-Aware Mixture of Language Experts</h3>
+              <p class="pub-authors">
+                Robin Faro*, <strong>Dongyang Fan*</strong>, Tamar Alphaidze, Martin Jaggi
+              </p>
+              <div class="pub-links">
                 <a href="https://arxiv.org/abs/2508.08827">arXiv</a>
-                /
-                <a href="https://github.com/epfml/TiMoE">codes</a>
-                /
+                <a href="https://github.com/epfml/TiMoE">code</a>
                 <a href="https://drive.google.com/file/d/1VYjrKzpk2gJ4tLB3LrWgir8FG1qPMZyA/view?usp=sharing">slides</a>
-                <div class="keywords">
-                  <span class="keyword-tag">Mixture-of-Experts</span>
-                  <span class="keyword-tag">Temporal Modeling</span>
-                  <span class="keyword-tag">LLM Architecture</span>
-                </div>
-                <p></p>
-                <!-- <p>
-                  <li>We introduce the concept of Data Compliance Gap (DCG), to quantify the performance difference due to ethical compliance  </li>
-                  <li>We demonstrate that DCG is close to 0% for general knowledge acquisition, however, compliance gap exists in knowledge of veracity and in structural formats. 
-                    </li>
-                  <li>A noticeable DCG also exists for non-compliant medical domain data.</li>
-                </p> -->
-              </td>
-            </tr>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Mixture-of-Experts</span>
+                <span class="keyword-tag">Temporal Modeling</span>
+                <span class="keyword-tag">LLM Architecture</span>
+              </div>
+            </div>
+          </article>
 
+          <article class="pub" data-topics="data">
+            <div class="pub-thumb"><img src="images/context-diagram.png" alt="Metadata utility thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">NeurIPS 2025</span>
+              <h3 class="pub-title">URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan</strong>, Vinko Sabolčec, Martin Jaggi
+              </p>
+              <div class="pub-links">
+                <a href="https://www.arxiv.org/abs/2505.16570">arXiv</a>
+                <a href="https://github.com/fan1dy/metadata-enhanced-pretrain-datapipeline">code</a>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">LLM Training</span>
+                <span class="keyword-tag">Metadata</span>
+                <span class="keyword-tag">Data Efficiency</span>
+                <span class="keyword-tag">Steering</span>
+              </div>
+            </div>
+          </article>
 
-
-
-            <tr bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle;">
-                <div class="conference-container">
-                  <span class="conference-tag">NeurIPS 2025</span>
-                </div>
-                <!-- <div class="one"> -->
-                <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/context-diagram.png' width="160">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training
-        </span>
-                </a>
-                <br>
-                <strong>Dongyang Fan</strong>,
-                Vinko Sabolčec, 
-                Martin Jaggi,
-                <br>
-                <a href="https://www.arxiv.org/abs/2505.16570">arXiv</a> /
-                <a href="https://github.com/fan1dy/metadata-enhanced-pretrain-datapipeline">codes</a>
-                <div class="keywords">
-                  <span class="keyword-tag">LLM Training</span>
-                  <span class="keyword-tag">Metadata</span>
-                  <span class="keyword-tag">Data Efficiency</span>
-                  <span class="keyword-tag">Steering</span>
-                </div>
-                <p></p>
-                <!-- <p>
-                  <li>Data are important for LLMs and they are of different intrinsic costs</li>
-                  <li>Applying popular data valuation methods as pricing rules may encourage data sellers to misreport their true costs </li>
-                  <li>We revisit classical truthful methods from the game theory literature</li>
-                </p> -->
-              </td>
-            </tr>
-    
-            <tr >
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="conference-container">
-                  <span class="conference-tag">COLM 2025 (oral 🏆)</span>
-                </div>
-                <!-- <div class="one"> -->
-                  <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/robots_history-1.png' width="160">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">Can Performant LLMs Be Ethical? Quantifying the Impact of Web Crawling Opt-Outs
-        </span>
-                </a>
-                <br>
-                <strong>Dongyang Fan</strong>,
-                Vinko Sabolčec, 
-                Matin Ansaripour, 
-                <a href="https://ayushkumartarun.github.io/">Ayush Kumar Tarun</a>, 
-                Martin Jaggi, 
+          <article class="pub" data-topics="data eval">
+            <div class="pub-thumb"><img src="images/robots_history-1.png" alt="Web crawling opt-outs thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">COLM 2025 · Oral 🏆</span>
+              <h3 class="pub-title">Can Performant LLMs Be Ethical? Quantifying the Impact of Web Crawling Opt-Outs</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan</strong>, Vinko Sabolčec, Matin Ansaripour,
+                <a href="https://ayushkumartarun.github.io/">Ayush Kumar Tarun</a>, Martin Jaggi,
                 <a href="https://atcbosselut.github.io/">Antoine Bosselut</a>,
                 <a href="https://scholar.google.ch/citations?user=nFQJEskAAAAJ&hl=en">Imanol Schlag</a>
-                <br>
+              </p>
+              <div class="pub-links">
                 <a href="https://arxiv.org/abs/2504.06219">arXiv</a>
-                /
-                <a href="https://github.com/swiss-ai/robots-txt-compliance">codes</a>
-                /
-                <a href="https://data-compliance.github.io/">project page</a> 
-                /
+                <a href="https://github.com/swiss-ai/robots-txt-compliance">code</a>
+                <a href="https://data-compliance.github.io/">project page</a>
                 <a href="https://drive.google.com/file/d/1Aj326KilI8yzK5nULQXbecHuMWEGvhnn/view?usp=sharing">slides</a>
-                <div class="keywords">
-                  <span class="keyword-tag">Data Compliance</span>
-                  <span class="keyword-tag">Ethics</span>
-                  <span class="keyword-tag">Memorization</span>
-                  <span class="keyword-tag">Responsible AI</span>
-                </div>
-                <p></p>
-                <!-- <p>
-                  <li>We introduce the concept of Data Compliance Gap (DCG), to quantify the performance difference due to ethical compliance  </li>
-                  <li>We demonstrate that DCG is close to 0% for general knowledge acquisition, however, compliance gap exists in knowledge of veracity and in structural formats. 
-                    </li>
-                  <li>A noticeable DCG also exists for non-compliant medical domain data.</li>
-                </p> -->
-              </td>
-            </tr>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Data Compliance</span>
+                <span class="keyword-tag">Ethics</span>
+                <span class="keyword-tag">Memorization</span>
+                <span class="keyword-tag">Responsible AI</span>
+              </div>
+            </div>
+          </article>
 
-
-            <tr bgcolor="#ffffd0">
-              <td style="padding:16px;width:20%;vertical-align:middle">
-                <div class="conference-container">
-                  <span class="conference-tag">ICLR WS 2025</span>
-                </div>
-                <!-- <div class="one"> -->
-                  <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-                  <img src='images/data_market.png' width="160">
-                </div>
-              </td>
-              <td style="padding:8px;width:80%;vertical-align:middle">
-              <span class="papertitle">Do Data Valuations Make Good Data Prices?
-        </span>
-                </a>
-                <br>
-                <strong>Dongyang Fan</strong>,
-                Tyler J. Rotello, 
+          <article class="pub" data-topics="data">
+            <div class="pub-thumb"><img src="images/data_market.png" alt="Data pricing thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">ICLR 2025 WS</span>
+              <h3 class="pub-title">Do Data Valuations Make Good Data Prices?</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan</strong>, Tyler J. Rotello,
                 <a href="https://spkreddy.org/">Sai Praneeth Karimireddy</a>
-                <br>
+              </p>
+              <div class="pub-links">
                 <a href="https://arxiv.org/abs/2504.05563">arXiv</a>
-                <div class="keywords">
-                  <span class="keyword-tag">Data Valuation</span>
-                  <span class="keyword-tag">Game Theory</span>
-                  <span class="keyword-tag">Data Markets</span>
-                </div>
-                <p></p>
-                <!-- <p>
-                  <li>Data are important for LLMs and they are of different intrinsic costs</li>
-                  <li>Applying popular data valuation methods as pricing rules may encourage data sellers to misreport their true costs </li>
-                  <li>We revisit classical truthful methods from the game theory literature</li>
-                </p> -->
-              </td>
-            </tr>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Data Valuation</span>
+                <span class="keyword-tag">Game Theory</span>
+                <span class="keyword-tag">Data Markets</span>
+              </div>
+            </div>
+          </article>
 
+          <article class="pub" data-topics="modular">
+            <div class="pub-thumb"><img src="images/comigs.png" alt="CoMiGS thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">ICML 2025</span>
+              <h3 class="pub-title">On-Device Collaborative Language Modeling via a Mixture of Generalists and Specialists</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan*</strong>, <a href="https://beme248.github.io/profile/">Bettina Messmer*</a>,
+                <a href="https://doikov.com/">Nikita Doikov</a>, Martin Jaggi
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2409.13931">arXiv</a>
+                <a href="https://github.com/epfml/CoMiGS/tree/main">code</a>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Collaborative Learning</span>
+                <span class="keyword-tag">Mixture-of-Experts</span>
+                <span class="keyword-tag">On-Device</span>
+                <span class="keyword-tag">Federated Learning</span>
+              </div>
+            </div>
+          </article>
 
+          <article class="pub" data-topics="modular">
+            <div class="pub-thumb"><img src="images/moe_design_choice.png" alt="MoE design choices thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">ICLR 2024 WS</span>
+              <h3 class="pub-title">Towards an Empirical Understanding of MoE Design Choices</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan*</strong>, <a href="https://beme248.github.io/profile/">Bettina Messmer*</a>, Martin Jaggi
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2402.13089">arXiv</a>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Mixture-of-Experts</span>
+                <span class="keyword-tag">Architecture Design</span>
+                <span class="keyword-tag">Expert Specialization</span>
+              </div>
+            </div>
+          </article>
 
-    <tr onmouseout="cat4d_stop()" onmouseover="cat4d_start()">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="conference-container">
-          <span class="conference-tag">ICML 2025</span>
-        </div>
-        <!-- <div class="one"> -->
-          <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-          <img src='images/comigs.png' width="160">
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-			<span class="papertitle">On-Device Collaborative Language Modeling via a Mixture of Generalists and Specialists
-</span>
-        </a>
-        <br>
-				<strong>Dongyang Fan*</strong>,
-				<a href="https://beme248.github.io/profile/">Bettina Messmer*</a>,
-        <a href="https://doikov.com/">Nikita Doikov</a>,
-        Martin Jaggi
-        <br>
-        <a href="https://github.com/epfml/CoMiGS/tree/main">codes</a>
-        /
-        <a href="https://arxiv.org/abs/2409.13931">arXiv</a>
-        <div class="keywords">
-          <span class="keyword-tag">Collaborative Learning</span>
-          <span class="keyword-tag">Mixture-of-Experts</span>
-          <span class="keyword-tag">On-Device</span>
-          <span class="keyword-tag">Federated Learning</span>
-        </div>
-        <p></p>
-        <!-- <p>
-          <li>We propose a novel collaborative language modeling framework -- CoMiGS </li>
-          <li>Our bi-level reformulation of MoE objectives efficiently achieves token-level personalization</li>
-          <li>Our method enjoys convergence guarantee and demonstrates strong empirical performances</li>
-        </p> -->
-      </td>
-    </tr>
+          <article class="pub" data-topics="modular">
+            <div class="pub-thumb"><img src="images/pcl.png" alt="Personalized collaborative fine-tuning thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">COLM 2024</span>
+              <h3 class="pub-title">Personalized Collaborative Fine-Tuning for On-Device Large Language Models</h3>
+              <p class="pub-authors">
+                Nicolas Wagner, <strong>Dongyang Fan</strong>, Martin Jaggi
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2404.09753">arXiv</a>
+                <a href="https://github.com/epfml/personalized-collaborative-llms">code</a>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Collaborative Learning</span>
+                <span class="keyword-tag">Personalization</span>
+                <span class="keyword-tag">On-Device</span>
+                <span class="keyword-tag">Fine-Tuning</span>
+              </div>
+            </div>
+          </article>
 
+          <article class="pub" data-topics="">
+            <div class="pub-thumb"><img src="images/ghost_noise.png" alt="Ghost noise thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">AAAI 2024</span>
+              <h3 class="pub-title">Ghost Noise for Regularizing Deep Neural Networks</h3>
+              <p class="pub-authors">
+                <a href="https://www.kosson.is/">Atli Kosson</a>, <strong>Dongyang Fan</strong>, Martin Jaggi
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2305.17205">arXiv</a>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Regularization</span>
+                <span class="keyword-tag">Deep Learning</span>
+                <span class="keyword-tag">Generalization</span>
+              </div>
+            </div>
+          </article>
 
-    <tr onmouseout="ever_stop()" onmouseover="ever_start()" bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="conference-container">
-          <span class="conference-tag">ICLR WS 2024</span>
-        </div>
-        <!-- <div class="one"> -->
-           <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-          <img src='images/moe_design_choice.png' width=100%>
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-			<span class="papertitle">Towards an empirical understanding of MoE design choices
-</span>
-        </a>
-        <br>
-        <strong>Dongyang Fan*</strong>,
-				<a href="https://beme248.github.io/profile/">Bettina Messmer*</a>,
-        Martin Jaggi
-				<br>
-        <a href="https://arxiv.org/abs/2402.13089">arXiv</a>
-        <div class="keywords">
-          <span class="keyword-tag">Mixture-of-Experts</span>
-          <span class="keyword-tag">Architecture Design</span>
-          <span class="keyword-tag">Expert Specialization</span>
-        </div>
-        <p></p>
-        <!-- <p>
-          <li>We ablate the design choices of Mixture-of-Experts models </li>
-          <li>Preferred design choices differ when routing at a token or sequence level </li>
-          <li>Weak topic specialization can stem from sequence-level routing</li>
-        </p> -->
-      </td>
-    </tr>
+          <article class="pub" data-topics="modular">
+            <div class="pub-thumb"><img src="images/collab-consensus.png" alt="Collaborative learning via prediction consensus thumbnail" loading="lazy"></div>
+            <div class="pub-body">
+              <span class="venue">NeurIPS 2023</span>
+              <h3 class="pub-title">Collaborative Learning via Prediction Consensus</h3>
+              <p class="pub-authors">
+                <strong>Dongyang Fan</strong>, <a href="https://celestine.ai/">Celestine Mendler-Dünner</a>, Martin Jaggi
+              </p>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2305.18497">arXiv</a>
+                <a href="https://github.com/fan1dy/collaboration-consensus">code</a>
+                <a href="https://drive.google.com/file/d/1p4QdvqdFaxWc40baEhVN-diXANpYFVcV/view?usp=sharing">poster</a>
+              </div>
+              <div class="keywords">
+                <span class="keyword-tag">Collaborative Learning</span>
+                <span class="keyword-tag">Consensus</span>
+                <span class="keyword-tag">Knowledge Distillation</span>
+              </div>
+            </div>
+          </article>
 
+        </div>
+      </section>
 
-    <tr >
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="conference-container">
-          <span class="conference-tag">COLM 2024</span>
-        </div>
-        <!-- <div class="one"> -->
-          <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-          <img src='images/pcl.png' width="160">
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-			<span class="papertitle">Personalized Collaborative Fine-Tuning for On-Device Large Language Models
-</span>
-        </a>
-        <br>
-				Nicolas Wagner,
-				<strong>Dongyang Fan</strong>,
-        Martin Jaggi
+      <!-- ============ Service + Misc ============ -->
+      <div class="two-col">
+        <section id="service" class="section card">
+          <h2>Academic Service</h2>
+          <ul>
+            <li>Reviewer for NeurIPS 2025 (Top Reviewer ⭐️), 2024; ICLR 2025, 2023; COLM 2025; and multiple workshops.</li>
+            <li>Supervision of student projects: supervised projects have led to a COLM paper and an oral presentation at a COLM workshop.</li>
+          </ul>
+        </section>
 
-        <br>
-        <a href="https://github.com/epfml/personalized-collaborative-llms">codes</a>
-        /
-        <a href="https://arxiv.org/abs/2404.09753">arXiv</a>
-        <div class="keywords">
-          <span class="keyword-tag">Collaborative Learning</span>
-          <span class="keyword-tag">Personalization</span>
-          <span class="keyword-tag">On-Device</span>
-          <span class="keyword-tag">Fine-Tuning</span>
-        </div>
-        <p></p>
-        <!-- <p>
-          <li> Logits are more effective in collaborator selection than gradients in language modeling </li>
-          <li> A better understanding of statistical heterogeneity in language data is needed.  </li>
-        </p> -->
-      </td>
-    </tr>
-
-
-    <tr bgcolor="#ffffd0">
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="conference-container">
-          <span class="conference-tag">AAAI 2024</span>
-        </div>
-        <!-- <div class="one"> -->
-          <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-          <img src='images/ghost_noise.png' width=100%>
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-          <span class="papertitle">Ghost Noise for Regularizing Deep Neural Networks
-          </span>
-        </a>
-        <br>
-				
-        <a href="https://www.kosson.is/">Atli Kosson</a>,
-				<strong>Dongyang Fan</strong>,
-        Martin Jaggi
-        <br>
-        <a href="https://arxiv.org/abs/2305.17205">arXiv</a>
-        <div class="keywords">
-          <span class="keyword-tag">Regularization</span>
-          <span class="keyword-tag">Deep Learning</span>
-          <span class="keyword-tag">Generalization</span>
-        </div>
-        <p></p>
-        <!-- <p>
-        <li>We propose a novel regularizer--ghost noise, that can improve the generalization of DNNs </li>  
-        <li>Ghost noise can be applied to noise-free layer-normalized networks.</li>
-        </p> -->
-      </td>
-    </tr>
-
-
-    <tr >
-      <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="conference-container">
-          <span class="conference-tag">NeurIPS 2023</span>
-        </div>
-        <!-- <div class="one"> -->
-          <div style="display: flex; align-items: center; justify-content: center; height: 100%;"></div>
-          <img src='images/collab-consensus.png' width=100%>
-        </div>
-      </td>
-      <td style="padding:8px;width:80%;vertical-align:middle">
-          <span class="papertitle">Collaborative Learning via Prediction Consensus
-          </span>
-        </a>
-        <br>
-				<strong>Dongyang Fan</strong>,
-        <a href="https://celestine.ai/">Celestine Mendler-Dünner</a>,
-        Martin Jaggi
-        <br>
-        <a href="https://github.com/fan1dy/collaboration-consensus">codes</a>
-        /
-        <a href="https://arxiv.org/abs/2305.18497">arXiv</a>
-        /
-        <a href="https://drive.google.com/file/d/1p4QdvqdFaxWc40baEhVN-diXANpYFVcV/view?usp=sharing">poster</a>
-        <div class="keywords">
-          <span class="keyword-tag">Collaborative Learning</span>
-          <span class="keyword-tag">Consensus</span>
-          <span class="keyword-tag">Knowledge Distillation</span>
-        </div>
-        <p></p>
-        <!-- <p>
-          <li>We propose a novel co-distillation method based on consensus reaching</li>
-          <li>Models iteratively determining labels on the target data can be modeled by a Markov Process</li> 
-        </p> -->
-      </td>
-    </tr>
-
- </tbody></table>
-  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-      <td style="padding:16px;width:100%;vertical-align:middle">
-        <h2>Academic Service</h2>
-        <ul>
-        <li>
-         Reviewer for NeurIPS 2025 (Top Reviewer ⭐️), 2024; ICLR 2025, 2023; COLM 2025 and multiple workshops.
-        </li>
-         <li>
-        Supervison of student projects: My supervised student projects have resulted in a COLM paper and an oral presentation at a COLM workshop.
-         </li>
-         </ul>
-      </td>
-    </tr>
-
-  </tbody></table>
-  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-      <td style="padding:16px;width:100%;vertical-align:middle">
-        <h2>Miscellaneous</h2>
-        <p>
-         In general I like arts and cultural stuff. I am also an outdoorsy person and I do hiking skiing and sailing. 
-        </p>
-        <p>
-        I paint from my hiking trips. For example... 
-        </p>
-        <style>
-          .grid-container {
-              display: grid;
-              grid-template-columns: repeat(2, 1fr); /* Two columns */
-              gap: 20px; /* Space between figures */
-              text-align: center;
-          }
-          img {
-              width: 100%;
-              max-width: 300px;
-              height: auto;
-          }
-      </style>
-        <div class="grid-container">
-          <figure>
-              <img src="images/bridge.jpeg" alt="Figure 1" >
-              <figcaption></figcaption>
-          </figure>
-          <figure>
-              <img src="images/grimentz.png" alt="Figure 2" >
-              <figcaption></figcaption>
-          </figure>
+        <section id="misc" class="section card">
+          <h2>Miscellaneous</h2>
+          <p>
+            I like arts and culture. I'm also an outdoorsy person: I hike, ski, and sail,
+            and I paint from my hiking trips 🌼
+          </p>
+          <div class="gallery">
+            <a href="images/bridge.jpeg"><img src="images/bridge.jpeg" alt="Painting of a bridge" loading="lazy"></a>
+            <a href="images/grimentz.png"><img src="images/grimentz.png" alt="Painting of Grimentz" loading="lazy"></a>
+          </div>
+        </section>
       </div>
-      
-      </td>
-    </tr>
-  </tbody></table>
-  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+    </main>
 
-            
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Source codes of the website are from <a href="https://github.com/jonbarron/jonbarron_website">here</a>. 
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
+    <footer class="site-footer">
+      Website template adapted from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
+    </footer>
 
-  <script>
-    // Theme management with time-based automatic switching
-    (function() {
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
-      const html = document.documentElement;
-      
-      // Determine if it's day or night based on local time
-      // Day: 6 AM - 8 PM (6:00 - 20:00)
-      // Night: 8 PM - 6 AM (20:00 - 6:00)
-      function isDayTime() {
-        const now = new Date();
-        const hour = now.getHours();
-        return hour >= 6 && hour < 20;
-      }
-      
-      // Get theme based on time of day
-      function getTimeBasedTheme() {
-        return isDayTime() ? 'light' : 'dark';
-      }
-      
-      // Check if user has manually set a preference
-      function hasManualOverride() {
-        return localStorage.getItem('theme') !== null;
-      }
-      
-      // Get saved theme preference
-      const savedTheme = localStorage.getItem('theme');
-      
-      // Set initial theme
-      if (savedTheme) {
-        // User has manually set a preference, use it
-        html.setAttribute('data-theme', savedTheme);
-      } else {
-        // No manual preference, use time-based theme
-        const timeBasedTheme = getTimeBasedTheme();
-        html.setAttribute('data-theme', timeBasedTheme);
-      }
-      
-      // Update icon
-      function updateIcon() {
-        const currentTheme = html.getAttribute('data-theme');
-        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-      }
-      updateIcon();
-      
-      // Toggle theme (manual override)
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme); // Save manual preference
+    <script>
+      // ---- Theme toggle (manual override persists; otherwise follows time of day) ----
+      (function() {
+        const html = document.documentElement;
+        const toggle = document.getElementById('themeToggle');
+        const icon = document.getElementById('themeIcon');
+
+        const timeTheme = () => { const h = new Date().getHours(); return h >= 6 && h < 20 ? 'light' : 'dark'; };
+        const updateIcon = () => { icon.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙'; };
+        const syncWithTime = () => {
+          if (localStorage.getItem('theme') === null) { html.setAttribute('data-theme', timeTheme()); updateIcon(); }
+        };
+
         updateIcon();
-      });
-      
-      // Check time periodically and update theme if no manual override
-      // Check every minute to catch day/night transitions
-      setInterval(() => {
-        if (!hasManualOverride()) {
-          const timeBasedTheme = getTimeBasedTheme();
-          const currentTheme = html.getAttribute('data-theme');
-          if (currentTheme !== timeBasedTheme) {
-            html.setAttribute('data-theme', timeBasedTheme);
-            updateIcon();
-          }
-        }
-      }, 60000); // Check every minute
-      
-      // Also check when page becomes visible again (user returns to tab)
-      document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && !hasManualOverride()) {
-          const timeBasedTheme = getTimeBasedTheme();
-          html.setAttribute('data-theme', timeBasedTheme);
+        toggle.addEventListener('click', () => {
+          const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          html.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
           updateIcon();
-        }
-      });
-    })();
+        });
+        setInterval(syncWithTime, 60000);
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) syncWithTime(); });
+      })();
 
-    // News: custom scrollbar with emoji thumb (native ::-webkit-scrollbar styling is unreliable)
-    (function() {
-      const viewport = document.getElementById('newsSlidesViewport');
-      const thumb = document.getElementById('newsScrollbarThumb');
-      const track = document.getElementById('newsScrollbarTrack');
-      const bar = document.getElementById('newsScrollbar');
-      if (!viewport || !thumb || !track || !bar) return;
+      // ---- News: show the latest few, expand on demand ----
+      (function() {
+        const VISIBLE = 4;
+        const items = document.querySelectorAll('#newsList li');
+        const btn = document.getElementById('newsToggle');
+        if (items.length <= VISIBLE) return;
+        let expanded = false;
+        const render = () => {
+          items.forEach((li, i) => { li.hidden = !expanded && i >= VISIBLE; });
+          btn.textContent = expanded ? 'Show less ↑' : 'Show older news ↓';
+        };
+        btn.hidden = false;
+        btn.addEventListener('click', () => { expanded = !expanded; render(); });
+        render();
+      })();
 
-      function maxScroll() {
-        return Math.max(0, viewport.scrollHeight - viewport.clientHeight);
-      }
+      // ---- Publications: filter by research topic ----
+      (function() {
+        const pubs = document.querySelectorAll('#pubList .pub');
+        const filters = document.querySelectorAll('.filter');
 
-      function updateThumb() {
-        const ms = maxScroll();
-        const trackH = track.clientHeight;
-        if (ms <= 0 || trackH <= 0) {
-          bar.classList.add('news-scrollbar--hidden');
-          thumb.style.transform = 'translateX(-50%)';
-          return;
-        }
-        bar.classList.remove('news-scrollbar--hidden');
-        const thumbH = thumb.offsetHeight;
-        const travel = Math.max(0, trackH - thumbH);
-        const top = travel > 0 ? (viewport.scrollTop / ms) * travel : 0;
-        thumb.style.transform = 'translateX(-50%) translateY(' + top + 'px)';
-      }
-
-      let dragStartY = 0;
-      let dragStartScroll = 0;
-
-      thumb.addEventListener('pointerdown', function(e) {
-        if (maxScroll() <= 0) return;
-        e.preventDefault();
-        thumb.setPointerCapture(e.pointerId);
-        dragStartY = e.clientY;
-        dragStartScroll = viewport.scrollTop;
-        thumb.classList.add('news-scrollbar-thumb--dragging');
-
-        function onMove(ev) {
-          const ms = maxScroll();
-          const trackH = track.clientHeight;
-          const thumbH = thumb.offsetHeight;
-          const travel = Math.max(1, trackH - thumbH);
-          const dy = ev.clientY - dragStartY;
-          const next = dragStartScroll + (dy / travel) * ms;
-          viewport.scrollTop = Math.max(0, Math.min(ms, next));
+        function applyFilter(topic) {
+          filters.forEach(f => f.classList.toggle('active', f.dataset.filter === topic));
+          pubs.forEach(p => {
+            const topics = p.dataset.topics.split(' ');
+            p.hidden = topic !== 'all' && !topics.includes(topic);
+          });
         }
 
-        function onUp(ev) {
-          thumb.releasePointerCapture(ev.pointerId);
-          thumb.classList.remove('news-scrollbar-thumb--dragging');
-          document.removeEventListener('pointermove', onMove);
-          document.removeEventListener('pointerup', onUp);
-        }
+        filters.forEach(f => f.addEventListener('click', () => applyFilter(f.dataset.filter)));
 
-        document.addEventListener('pointermove', onMove);
-        document.addEventListener('pointerup', onUp);
-      });
-
-      track.addEventListener('pointerdown', function(e) {
-        if (e.target === thumb || thumb.contains(e.target)) return;
-        const ms = maxScroll();
-        if (ms <= 0) return;
-        const rect = track.getBoundingClientRect();
-        const thumbH = thumb.offsetHeight;
-        const trackH = track.clientHeight;
-        const travel = Math.max(1, trackH - thumbH);
-        const y = e.clientY - rect.top - thumbH / 2;
-        const clamped = Math.max(0, Math.min(travel, y));
-        viewport.scrollTop = (clamped / travel) * ms;
-      });
-
-      viewport.addEventListener('scroll', updateThumb, { passive: true });
-      window.addEventListener('resize', updateThumb);
-      if (typeof ResizeObserver !== 'undefined') {
-        new ResizeObserver(updateThumb).observe(viewport);
-        new ResizeObserver(updateThumb).observe(track);
-      }
-      updateThumb();
-    })();
-
-  </script>
+        // "See papers" buttons on research cards jump to a filtered list
+        document.querySelectorAll('.interest-link').forEach(btn => {
+          btn.addEventListener('click', () => {
+            applyFilter(btn.dataset.filter);
+            document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
